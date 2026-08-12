@@ -5,37 +5,28 @@ import { NavLink } from 'react-router-dom';
 import SEO from '../../components/SEO/SEO';
 import Reveal, { RevealStagger, RevealStaggerItem } from '../../components/Reveal/Reveal';
 import { IMG } from '../../assets/images/images';
-import { VID } from '../../assets/videos/videos';
+import { VIDEOS } from '../../assets/videos/videos';
 import './Gallery.css';
 
 // const FILTERS = ['All', 'Hair', 'Makeup', 'Bridal', 'Beard', 'Spa', 'Nails'];
 
-// `thumb` = poster image shown in the grid, `src` = actual video file that plays
-const VIDEOS = [
-  { src: VID.video_one },
-  { src: VID.video_two },
-  { src: VID.video_three },
-  { src: VID.video_four },
-  { src: VID.video_five },
-  { src: VID.video_six },
-];
 
 const PHOTOS = [
-  { src: IMG.haircutMenClose, alt: 'Sharp modern men\u2019s haircut' },
-  { src: IMG.hairColorWoman, alt: 'Long curled balayage hair color' },
-  { src: IMG.beardGrooming, alt: 'Precision beard grooming' },
-  { src: IMG.bridalMakeup, alt: 'Traditional bridal makeup and jewellery' },
-  { src: IMG.hairStylingCurls, alt: 'Elegant updo hairstyle' },
-  { src: IMG.facial, alt: 'Relaxing facial treatment' },
-  { src: IMG.nailPolish, alt: 'Gel nail polish application' },
-  { src: IMG.beardGroomingClose, alt: 'Close up beard styling' },
-  { src: IMG.groomMakeup, alt: 'Party makeup application' },
-  { src: IMG.massageSpa, alt: 'Under eye hydration care' },
-  { src: IMG.hairColorWoman, alt: 'Voluminous curled hairstyle' },
-  { src: IMG.nailArt, alt: 'Detailed nail art design' },
-  { src: IMG.massage, alt: 'Head massage relaxation therapy' },
-  { src: IMG.hairSpa, alt: 'Wavy hair spa result' },
-  { src: IMG.nailPolish, alt: 'Fresh manicure finish' },
+  { id: 1, src: IMG.haircutMenClose, alt: 'Sharp modern men\u2019s haircut' },
+  { id: 2, src: IMG.hairColorWoman, alt: 'Long curled balayage hair color' },
+  { id: 3, src: IMG.beardGrooming, alt: 'Precision beard grooming' },
+  { id: 4, src: IMG.bridalMakeup, alt: 'Traditional bridal makeup and jewellery' },
+  { id: 5, src: IMG.hairStylingCurls, alt: 'Elegant updo hairstyle' },
+  { id: 6, src: IMG.facial, alt: 'Relaxing facial treatment' },
+  { id: 7, src: IMG.nailPolish, alt: 'Gel nail polish application' },
+  { id: 8, src: IMG.beardGroomingClose, alt: 'Close up beard styling' },
+  { id: 9, src: IMG.groomMakeup, alt: 'Party makeup application' },
+  { id: 10, src: IMG.massageSpa, alt: 'Under eye hydration care' },
+  { id: 11, src: IMG.hairColorWoman, alt: 'Voluminous curled hairstyle' },
+  { id: 12, src: IMG.nailArt, alt: 'Detailed nail art design' },
+  { id: 13, src: IMG.massage, alt: 'Head massage relaxation therapy' },
+  { id: 14, src: IMG.hairSpa, alt: 'Wavy hair spa result' },
+  { id: 15, src: IMG.nailPolish, alt: 'Fresh manicure finish' },
 ];
 
 export default function Gallery() {
@@ -44,9 +35,10 @@ export default function Gallery() {
   const [activeVideo, setActiveVideo] = useState(null); // holds VIDEOS index or null
   const scrollerRef = useRef(null);
 
-  const filteredPhotos = useMemo(
-    () => (activeFilter === 'All' ? PHOTOS : PHOTOS.filter((p) => p.category === activeFilter)),
-    [activeFilter],
+  const shuffledPhotos = useMemo(
+    () => {
+      return [...PHOTOS].sort(() => Math.random() - 0.5);
+    }, [],
   );
 
   const scrollVideos = (dir) => {
@@ -56,9 +48,12 @@ export default function Gallery() {
 
   const openLightbox = (index) => setLightboxIndex(index);
   const closeLightbox = () => setLightboxIndex(null);
-  const showNext = () => setLightboxIndex((i) => (i + 1) % filteredPhotos.length);
-  const showPrev = () => setLightboxIndex((i) => (i - 1 + filteredPhotos.length) % filteredPhotos.length);
+  const showNext = () => setLightboxIndex((i) => (i + 1) % shuffledPhotos.length);
+  const showPrev = () => setLightboxIndex((i) => (i - 1 + shuffledPhotos.length) % shuffledPhotos.length);
 
+  const shuffledVideos = useMemo(() => {
+    return [...VIDEOS].sort(() => Math.random() - 0.5);
+  }, []);
   const openVideo = (index) => setActiveVideo(index);
   const closeVideo = () => setActiveVideo(null);
 
@@ -135,13 +130,13 @@ export default function Gallery() {
             </button> */}
 
             <div className="gallery-videos__row" ref={scrollerRef}>
-              {VIDEOS.map((v, i) => (
+              {shuffledVideos.map((v, i) => (
                 <button
                   type="button"
                   className="video-card"
                   key={v.title}
                   onClick={() => openVideo(i)}
-                  aria-label={`Play video: ${v.title}`}
+                  aria-label={`Play video`}
                 >
                   <div className="video-card__thumb">
                     <video
@@ -155,8 +150,8 @@ export default function Gallery() {
                     <span className="video-card__play"><Play size={20} fill="currentColor" /></span>
                     {/* <span className="video-card__duration">{v.duration}</span> */}
                   </div>
-                  <h4>{v.title}</h4>
-                  <p>{v.tag}</p>
+                  {/* <h4>{v.title}</h4>
+                  <p>{v.tag}</p> */}
                 </button>
               ))}
             </div>
@@ -177,8 +172,8 @@ export default function Gallery() {
           </Reveal>
 
           <RevealStagger className="gallery-photos__grid" staggerDelay={0.04} amount={0.05}>
-            {PHOTOS.map((photo, i) => (
-              <RevealStaggerItem key={`${photo.src}-${i}`} className="gallery-photo">
+            {shuffledPhotos.map((photo, i) => (
+              <RevealStaggerItem key={`${photo.id}`} className="gallery-photo">
                 <button type="button" onClick={() => openLightbox(i)} aria-label={`View larger image: ${photo.alt}`}>
                   <img src={photo.src} alt={photo.alt} loading="lazy" />
                   <span className="gallery-photo__overlay" />
@@ -186,10 +181,6 @@ export default function Gallery() {
               </RevealStaggerItem>
             ))}
           </RevealStagger>
-
-          {filteredPhotos.length === 0 && (
-            <p className="gallery-photos__empty">No photos found in this category yet.</p>
-          )}
         </div>
       </section>
 
@@ -210,7 +201,7 @@ export default function Gallery() {
 
       {/* PHOTO LIGHTBOX */}
       <AnimatePresence>
-        {lightboxIndex !== null && filteredPhotos[lightboxIndex] && (
+        {lightboxIndex !== null && shuffledPhotos[lightboxIndex] && (
           <motion.div
             className="lightbox"
             initial={{ opacity: 0 }}
@@ -235,9 +226,9 @@ export default function Gallery() {
             </button>
 
             <motion.img
-              key={filteredPhotos[lightboxIndex].src}
-              src={filteredPhotos[lightboxIndex].src}
-              alt={filteredPhotos[lightboxIndex].alt}
+              key={shuffledPhotos[lightboxIndex].src}
+              src={shuffledPhotos[lightboxIndex].src}
+              alt={shuffledPhotos[lightboxIndex].alt}
               className="lightbox__img"
               onClick={(e) => e.stopPropagation()}
               initial={{ scale: 0.92, opacity: 0 }}
@@ -259,7 +250,7 @@ export default function Gallery() {
 
       {/* VIDEO PLAYER MODAL */}
       <AnimatePresence>
-        {activeVideo !== null && VIDEOS[activeVideo] && (
+        {activeVideo !== null && shuffledVideos[activeVideo] && (
           <motion.div
             className="lightbox video-lightbox"
             initial={{ opacity: 0 }}
@@ -276,9 +267,9 @@ export default function Gallery() {
             </button>
 
             <motion.video
-              key={VIDEOS[activeVideo].src}
+              key={shuffledVideos[activeVideo].id}
               className="video-lightbox__player"
-              src={VIDEOS[activeVideo].src}
+              src={shuffledVideos[activeVideo].src}
               controls
               autoPlay
               onClick={(e) => e.stopPropagation()}
