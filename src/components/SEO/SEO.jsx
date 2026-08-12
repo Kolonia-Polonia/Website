@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
 const SITE_NAME = "Kolonia Polonia Hair Studio";
-const SITE_URL = "https://koloniapolonia.com";
+const SITE_URL = "https://koloniapolonia.in";
 
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
 
