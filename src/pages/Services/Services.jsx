@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { Scissors, Smile, Flower2, Hand, Eye, Wand2, Check, Calendar, Users, ShieldCheck, Package, HeartHandshake, BadgeCheck } from 'lucide-react';
 import SEO from '../../components/SEO/SEO';
 import Reveal, { RevealStagger, RevealStaggerItem } from '../../components/Reveal/Reveal';
-import { IMG } from '../../assets/images/unsplash';
+import { IMG } from '../../assets/images/images';
 import './Services.css';
 import { motion } from 'framer-motion';
 

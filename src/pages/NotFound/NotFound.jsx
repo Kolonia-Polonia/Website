@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Scissors, Home, Calendar, ArrowRight } from 'lucide-react';
 import SEO from '../../components/SEO/SEO';
-import { IMG } from '../../assets/images/unsplash';
+import { IMG } from '../../assets/images/images';
 import './NotFound.css';
 
 const QUICK_LINKS = [

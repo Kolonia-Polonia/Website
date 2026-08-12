@@ -53,8 +53,13 @@
 }
 
 @media (max-width: 640px) {
-  .gallery-filterbar { position: static; }
-  .gallery-filterbar__inner { padding: 16px 20px; }
+  .gallery-filterbar {
+    position: static;
+  }
+
+  .gallery-filterbar__inner {
+    padding: 16px 20px;
+  }
 }
 
 /* SECTION HEAD */
@@ -76,7 +81,9 @@
   text-transform: uppercase;
 }
 
-.gallery-section-head__label svg { color: var(--color-red); }
+.gallery-section-head__label svg {
+  color: var(--color-red);
+}
 
 .gallery-section-head__link {
   font-size: 13px;
@@ -100,11 +107,44 @@
   scrollbar-width: none;
 }
 
-.gallery-videos__row::-webkit-scrollbar { display: none; }
+.gallery-videos__row::-webkit-scrollbar {
+  display: none;
+}
 
+/* VIDEO CARD as button reset */
 .video-card {
   flex: 0 0 270px;
   scroll-snap-align: start;
+  text-align: left;
+  cursor: pointer;
+}
+
+.video-card__preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+  pointer-events: none;
+  /* clicks fall through to the button */
+}
+
+.video-card:hover .video-card__preview {
+  transform: scale(1.08);
+}
+
+.video-lightbox__player {
+  max-width: 82vw;
+  max-height: 82vh;
+  outline: none;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  background: #000;
+}
+
+@media (max-width: 640px) {
+  .video-lightbox__player {
+    max-width: 94vw;
+    max-height: 70vh;
+  }
 }
 
 .video-card__thumb {
@@ -121,7 +161,9 @@
   transition: transform 0.6s var(--ease);
 }
 
-.video-card:hover .video-card__thumb img { transform: scale(1.08); }
+.video-card:hover .video-card__thumb img {
+  transform: scale(1.08);
+}
 
 .video-card__play {
   position: absolute;
@@ -154,8 +196,15 @@
   padding: 3px 8px;
 }
 
-.video-card h4 { font-size: 14.5px; margin-bottom: 4px; }
-.video-card p { font-size: 12px; color: var(--color-red); }
+.video-card h4 {
+  font-size: 14.5px;
+  margin-bottom: 4px;
+}
+
+.video-card p {
+  font-size: 12px;
+  color: var(--color-red);
+}
 
 .gallery-videos__arrow {
   flex-shrink: 0;
@@ -169,12 +218,24 @@
   transition: all 0.3s var(--ease);
 }
 
-.gallery-videos__arrow:hover { background: var(--color-black); color: var(--color-white); border-color: var(--color-black); }
+.gallery-videos__arrow:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
 
 @media (min-width: 860px) {
-  .gallery-videos__arrow { display: flex; }
-  .gallery-videos__arrow--left { margin-right: 16px; }
-  .gallery-videos__arrow--right { margin-left: 16px; }
+  .gallery-videos__arrow {
+    display: flex;
+  }
+
+  .gallery-videos__arrow--left {
+    margin-right: 16px;
+  }
+
+  .gallery-videos__arrow--right {
+    margin-left: 16px;
+  }
 }
 
 /* PHOTO GALLERY */
@@ -207,8 +268,13 @@
   transition: background 0.35s var(--ease);
 }
 
-.gallery-photo:hover img { transform: scale(1.1); }
-.gallery-photo:hover .gallery-photo__overlay { background: rgba(10, 10, 10, 0.18); }
+.gallery-photo:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-photo:hover .gallery-photo__overlay {
+  background: rgba(10, 10, 10, 0.18);
+}
 
 .gallery-photos__empty {
   text-align: center;
@@ -217,11 +283,16 @@
 }
 
 @media (max-width: 1080px) {
-  .gallery-photos__grid { grid-template-columns: repeat(3, 1fr); }
+  .gallery-photos__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
-  .gallery-photos__grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .gallery-photos__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
 }
 
 /* CTA */
@@ -239,8 +310,16 @@
   padding: 50px 32px;
 }
 
-.gallery-cta__text h3 { color: var(--color-white); font-size: 24px; margin-bottom: 6px; }
-.gallery-cta__text p { color: rgba(255, 255, 255, 0.6); font-size: 14px; }
+.gallery-cta__text h3 {
+  color: var(--color-white);
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.gallery-cta__text p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
 
 /* LIGHTBOX */
 .lightbox {
@@ -281,12 +360,29 @@
   transition: background 0.3s var(--ease);
 }
 
-.lightbox__nav:hover { background: rgba(255, 255, 255, 0.15); }
-.lightbox__nav--left { left: 20px; }
-.lightbox__nav--right { right: 20px; }
+.lightbox__nav:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.lightbox__nav--left {
+  left: 20px;
+}
+
+.lightbox__nav--right {
+  right: 20px;
+}
 
 @media (max-width: 640px) {
-  .lightbox__nav { width: 40px; height: 40px; }
-  .lightbox__nav--left { left: 8px; }
-  .lightbox__nav--right { right: 8px; }
+  .lightbox__nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lightbox__nav--left {
+    left: 8px;
+  }
+
+  .lightbox__nav--right {
+    right: 8px;
+  }
 }

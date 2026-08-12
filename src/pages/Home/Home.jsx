@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import SEO from '../../components/SEO/SEO';
 import Reveal, { RevealStagger, RevealStaggerItem } from '../../components/Reveal/Reveal';
-import { IMG } from '../../assets/images/unsplash';
+import { IMG } from '../../assets/images/images';
 import './Home.css';
 
 const STATS = [
