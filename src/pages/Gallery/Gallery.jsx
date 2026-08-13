@@ -141,6 +141,7 @@ export default function Gallery() {
                   <div className="video-card__thumb">
                     <video
                       className="video-card__preview"
+                      poster={v.thumb}
                       src={v.src}
                       muted
                       loop
