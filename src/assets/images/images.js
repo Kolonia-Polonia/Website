@@ -2,6 +2,8 @@
 // black & white salon branding. Replace with final client assets.
 const u = (id, w = 1400) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
 
+import founderPortrait from './common/biju_polonia.jpeg'
+
 export const IMG = {
   salonInterior1: u('photo-1633681926035-ec1ac984418a'),
   salonInterior2: u('photo-1521590832167-7bcbfaa6381f'),
@@ -30,7 +32,7 @@ export const IMG = {
   beautyProducts: u('photo-1522335789203-aabd1fc54bc9'),
   happyCustomer1: u('photo-1487412720507-e7ab37603c6f'),
   happyCustomer2: u('photo-1524504388940-b1c1722653e1'),
-  founderPortrait: u('photo-1560250097-0b93528c311a'),
+  founderPortrait: founderPortrait,
   founderWorking: u('photo-1580618672591-eb180b1a973f'),
   branchInterior1: u('photo-1633681926035-ec1ac984418a'),
   branchInterior2: u('photo-1521590832167-7bcbfaa6381f'),
