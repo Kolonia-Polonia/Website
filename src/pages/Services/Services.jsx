@@ -190,7 +190,7 @@ export default function Services() {
             </ul>
           </Reveal>
           <Reveal direction="left" delay={0.1} className="services-split__img">
-            <img src={IMG.massage} alt="Client enjoying a relaxing body massage" loading="lazy" />
+            <img src={IMG.hairSpa} alt="Client enjoying a relaxing body massage" loading="lazy" />
           </Reveal>
         </div>
       </section>

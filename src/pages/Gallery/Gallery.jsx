@@ -7,27 +7,9 @@ import Reveal, { RevealStagger, RevealStaggerItem } from '../../components/Revea
 import { IMG } from '../../assets/images/images';
 import { VIDEOS } from '../../assets/videos/videos';
 import './Gallery.css';
+import { PHOTOS } from '../../assets/images/gallery';
 
 // const FILTERS = ['All', 'Hair', 'Makeup', 'Bridal', 'Beard', 'Spa', 'Nails'];
-
-
-const PHOTOS = [
-  { id: 1, src: IMG.haircutMenClose, alt: 'Sharp modern men\u2019s haircut' },
-  { id: 2, src: IMG.hairColorWoman, alt: 'Long curled balayage hair color' },
-  { id: 3, src: IMG.beardGrooming, alt: 'Precision beard grooming' },
-  { id: 4, src: IMG.bridalMakeup, alt: 'Traditional bridal makeup and jewellery' },
-  { id: 5, src: IMG.hairStylingCurls, alt: 'Elegant updo hairstyle' },
-  { id: 6, src: IMG.facial, alt: 'Relaxing facial treatment' },
-  { id: 7, src: IMG.nailPolish, alt: 'Gel nail polish application' },
-  { id: 8, src: IMG.beardGroomingClose, alt: 'Close up beard styling' },
-  { id: 9, src: IMG.groomMakeup, alt: 'Party makeup application' },
-  { id: 10, src: IMG.massageSpa, alt: 'Under eye hydration care' },
-  { id: 11, src: IMG.hairColorWoman, alt: 'Voluminous curled hairstyle' },
-  { id: 12, src: IMG.nailArt, alt: 'Detailed nail art design' },
-  { id: 13, src: IMG.massage, alt: 'Head massage relaxation therapy' },
-  { id: 14, src: IMG.hairSpa, alt: 'Wavy hair spa result' },
-  { id: 15, src: IMG.nailPolish, alt: 'Fresh manicure finish' },
-];
 
 export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -121,7 +103,7 @@ export default function Gallery() {
             <span className="gallery-section-head__label">
               <Play size={16} strokeWidth={2} /> Video Gallery
             </span>
-            <button type="button" className="gallery-section-head__link">View All Videos &rarr;</button>
+            <a type="button" href='https://www.instagram.com/kolonia_polonia_alleppy?igsh=MW04bXEweGVhaGhxZA==' className="gallery-section-head__link">View All Videos &rarr;</a>
           </Reveal>
 
           <div className="gallery-videos__row-wrap">
@@ -169,7 +151,7 @@ export default function Gallery() {
         <div className="container">
           <Reveal className="gallery-section-head">
             <span className="gallery-section-head__label">Photo Gallery</span>
-            <button type="button" className="gallery-section-head__link">View All Photos &rarr;</button>
+            <a href='https://www.instagram.com/kolonia_polonia_alleppy?igsh=MW04bXEweGVhaGhxZA==' className="gallery-section-head__link">View All Photos &rarr;</a>
           </Reveal>
 
           <RevealStagger className="gallery-photos__grid" staggerDelay={0.04} amount={0.05}>

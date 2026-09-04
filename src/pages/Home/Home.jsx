@@ -34,41 +34,31 @@ const SERVICES = [
   { title: 'Haircut & Styling', tag: 'Trendy cuts & styling for every personality', image: IMG.haircutMenClose },
   { title: 'Hair Color & Treatment', tag: 'Vibrant color, highlights & hair care solutions', image: IMG.hairColorWoman },
   { title: 'Bridal Makeover', tag: 'Stunning bridal looks for your big day', image: IMG.bridalMakeup },
-  { title: 'Skin & Face Care', tag: 'Rejuvenate, refresh & glow naturally', image: IMG.facial },
-  { title: 'Spa & Relaxation', tag: 'Relax your body, refresh your mind', image: IMG.massage },
+  { title: 'Skin & Face Care', tag: 'Rejuvenate, refresh & glow naturally', image: IMG.facialClose },
+  { title: 'Hair Spa', tag: 'Nourish your hair, refresh your scalp', image: IMG.hairSpa },
   { title: 'Nails & Pedicure', tag: 'Perfect nails, flawless finishes', image: IMG.nailArt },
   { title: 'Threading & Waxing', tag: 'Precision grooming with care', image: IMG.threading },
   { title: 'Makeup & Party Look', tag: 'Glam looks for parties & special occasions', image: IMG.groomMakeup },
-  { title: 'Beard Grooming', tag: 'Sharp beard styles that define you', image: IMG.beardGrooming },
-  { title: 'Men\u2019s Grooming', tag: 'Complete grooming for the modern man', image: IMG.haircutMen },
+  { title: 'Beard Grooming', tag: 'Sharp beard styles that define you', image: IMG.beardGroomingClose },
+  { title: 'Men\u2019s Grooming', tag: 'Complete grooming for the modern man', image: IMG.haircutMenClose },
 ];
 
 
-import loreal from "../../assets/images/brands/loreal.png";
-import matrix from "../../assets/images/brands/matrix.png";
-import kerastase from "../../assets/images/brands/kerastase.png";
-import redken from "../../assets/images/brands/redken.png";
-import wella from "../../assets/images/brands/wella.png";
-import olaplex from "../../assets/images/brands/olaplex.png";
-import schwarzkopf from "../../assets/images/brands/schwarzkopf.png";
-import brillare from "../../assets/images/brands/brillare.png";
-
-
 const BRANDS = [
-  { name: 'Brillare', src: brillare },
-  { name: 'L\u2019Or\u00e9al', src: loreal },
-  { name: 'Matrix', src: matrix },
-  { name: 'K\u00e9rastase', src: kerastase },
-  { name: 'Redken', src: redken },
-  { name: 'Wella Professionals', src: wella },
-  { name: 'Olaplex', src: olaplex },
-  { name: 'Schwarzkopf Professional', src: schwarzkopf },
+  { name: 'Brillare', src: IMG.brillare },
+  { name: 'L\u2019Or\u00e9al', src: IMG.loreal },
+  { name: 'Matrix', src: IMG.matrix },
+  { name: 'K\u00e9rastase', src: IMG.kerastase },
+  { name: 'Redken', src: IMG.redken },
+  { name: 'Wella Professionals', src: IMG.wella },
+  { name: 'Olaplex', src: IMG.olaplex },
+  { name: 'Schwarzkopf Professional', src: IMG.schwarzkopf },
 ];
 
 const BRANCHES = [
   { tag: 'Main Branch', name: 'Alappuzha', address: 'Near Hospital Jn. Municipal Stadium Ward, Vellakkinar, Alappuzha, Kerala \u2013 688001', phone: '98472 21919', image: IMG.branchInterior1 },
-  { tag: 'Branch 2', name: 'Thondankulangara', address: 'G85Q+2XH, Thondankulangara, Thathampally, Alappuzha, Kerala \u2013 688013', phone: '98472 21919', image: IMG.branchInterior2 },
-  { tag: 'Branch 3', name: 'Arattuvazhy', address: 'Coming Soon', phone: '98472 21919', image: IMG.branchInterior3 },
+  { tag: 'Branch 2', name: 'Arattuvazhy', address: 'ARATTUVAZHI, MALIKAMUKK ROAD, Vellappally, Kanjiramchira, Alappuzha, Kerala 688007', phone: '98472 21919', image: IMG.branchInterior3 },
+  { tag: 'Branch 3', name: 'Thondankulangara', address: 'G85Q+2XH, Thondankulangara, Thathampally, Alappuzha, Kerala \u2013 688013', phone: '98472 21919', image: IMG.branchInterior2 },
 ];
 
 const WHY_US = [

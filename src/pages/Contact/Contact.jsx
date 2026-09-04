@@ -9,8 +9,8 @@ import { motion } from 'framer-motion';
 
 const BRANCHES = [
   { tag: 'Main Branch', name: 'Alappuzha', address: 'Near Hospital Jn. Municipal Stadium Ward, Vellakkinar, Alappuzha, Kerala \u2013 688001', phone: '98472 21919', image: IMG.branchInterior1 },
-  { tag: 'Branch 2', name: 'Thondankulangara', address: 'G85Q+2XH, Thondankulangara, Thathampally, Alappuzha, Kerala \u2013 688013', phone: '98472 21919', image: IMG.branchInterior2 },
-  { tag: 'Branch 3', name: 'Arattuvazhy', address: 'Coming Soon', phone: '98472 21919', image: IMG.branchInterior3 },
+  { tag: 'Branch 2', name: 'Arattuvazhy', address: 'ARATTUVAZHI, MALIKAMUKK ROAD, Vellappally, Kanjiramchira, Alappuzha, Kerala 688007', phone: '98472 21919', image: IMG.branchInterior3 },
+  { tag: 'Branch 3', name: 'Thondankulangara', address: 'G85Q+2XH, Thondankulangara, Thathampally, Alappuzha, Kerala \u2013 688013', phone: '98472 21919', image: IMG.branchInterior2 },
 ];
 
 const INITIAL_FORM = { name: '', phone: '', email: '', service: '', message: '' };
