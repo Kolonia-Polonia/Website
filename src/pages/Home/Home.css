@@ -524,7 +524,155 @@ HERO===========================================*/
   }
 }
 
+/* ===========================================
+   STUDIO SHOWCASE — two videos, one scissor-cut seam
+=========================================== */
+.home-showcase {
+  padding: 110px 0;
+  /* background: var(--color-gray-50); */
+  overflow: hidden;
+}
+
+.home-showcase__head {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 56px;
+  padding: 0 32px;
+}
+
+.home-showcase__head h2 {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+}
+
+.home-showcase__stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 540px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.showcase-pane {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-black);
+}
+
+.showcase-pane--0 {
+  clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+  margin-right: -6%;
+  z-index: 1;
+}
+
+.showcase-pane--1 {
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+  margin-left: -6%;
+  z-index: 0;
+}
+
+.showcase-pane__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+
+.showcase-pane:hover .showcase-pane__video {
+  transform: scale(1.06);
+}
+
+.showcase-pane__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, .78) 100%);
+}
+
+.showcase-pane__caption {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 26px;
+  color: var(--color-white);
+}
+
+.showcase-pane--0 .showcase-pane__caption {
+  right: 16%;
+}
+
+.showcase-pane--1 .showcase-pane__caption {
+  left: 16%;
+}
+
+.showcase-pane__label {
+  display: block;
+  font-family: var(--font-script);
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.showcase-pane__caption p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .78);
+  max-width: 260px;
+}
+
+.showcase-seam {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(10, 10, 10, .18);
+  transform: translate(-50%, -50%) rotate(12deg);
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .home-showcase {
+    padding: 80px 0;
+  }
+
+  .home-showcase__stage {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 16px;
+  }
+
+  .showcase-pane {
+    height: 320px;
+    clip-path: none !important;
+    margin: 0 !important;
+  }
+
+  .showcase-pane__caption {
+    left: 20px !important;
+    right: 20px !important;
+  }
+
+  .showcase-seam {
+    display: none;
+  }
+}
+
+
+
 /* WHY US */
+.home-why {
+  background: var(--color-gray-50);
+
+}
+
 .home-why__inner {
   display: grid;
   grid-template-columns: 1fr 1.6fr;
@@ -572,7 +720,7 @@ HERO===========================================*/
    TESTIMONIALS
 =========================================== */
 .home-testimonials {
-  background: var(--color-gray-50);
+  /* background: var(--color-gray-50); */
   color: var(--color-black);
   position: relative;
   overflow-x: hidden;

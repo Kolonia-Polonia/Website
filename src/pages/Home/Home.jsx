@@ -17,6 +17,7 @@ import {
   Quote,
   ChevronLeft,
   ChevronRight,
+  Scissors,
 } from 'lucide-react';
 import SEO from '../../components/SEO/SEO';
 import Reveal, { RevealStagger, RevealStaggerItem } from '../../components/Reveal/Reveal';
@@ -68,6 +69,22 @@ const WHY_US = [
   { icon: Sparkles, label: 'Trendy & Advanced Techniques' },
   { icon: Heart, label: 'Customer Satisfaction First' },
 ];
+
+const SHOWCASE_VIDEOS = [
+  {
+    label: 'The Studio Floor',
+    caption: 'Where every chair has a story and every mirror has seen a transformation.',
+    poster: IMG.branchInterior1,
+    src: "https://res.cloudinary.com/gukslepc/video/upload/v1788438712/POLONIA_KANJIRAMCHIRA_2.mp4",
+  },
+  {
+    label: 'The Finishing Touch',
+    caption: 'Precision, patience, and a little bit of magic in every last detail.',
+    poster: IMG.branchInterior3,
+    src: "https://res.cloudinary.com/gukslepc/video/upload/v1788438717/POLONIA_KANJIRAMCHIRA.mp4",
+  },
+];
+
 
 const TESTIMONIALS = [
   {
@@ -424,6 +441,40 @@ export default function Home() {
             ))}
           </ul>
         </div>
+      </section>
+
+      {/* STUDIO SHOWCASE — two videos meeting at a single diagonal, scissor-cut seam */}
+      <section className="home-showcase">
+        <Reveal className="home-showcase__head">
+          <span className="eyebrow">Take A Look Inside</span>
+          <h2>The Studio, In Motion</h2>
+        </Reveal>
+
+        <Reveal direction="up" delay={0.1} className="home-showcase__stage">
+          {SHOWCASE_VIDEOS.map((video, i) => (
+            <div className={`showcase-pane showcase-pane--${i}`} key={video.label}>
+              <video
+                className="showcase-pane__video"
+                src={video.src}
+                poster={video.poster}
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+              />
+              <div className="showcase-pane__scrim" />
+              <div className="showcase-pane__caption">
+                <span className="showcase-pane__label">{video.label}</span>
+                <p>{video.caption}</p>
+              </div>
+            </div>
+          ))}
+
+          <div className="showcase-seam" aria-hidden="true">
+            <Scissors size={20} strokeWidth={1.6} />
+          </div>
+        </Reveal>
       </section>
 
       {/* WHY CHOOSE US */}
