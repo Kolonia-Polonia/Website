@@ -34,15 +34,8 @@ export const BOOKING_BRANCHES = [
     place: 'Malikamukku, Alappuzha',
     address:
       'Arattuvazhi, Malikamukku Road, Vellappally, Kanjiramchira, Alappuzha, Kerala – 688007',
-    phone: '98472 21919',
-
-    /*
-      IMPORTANT:
-      Replace this with the separate Malikamukku Branch WhatsApp number.
-      Include the country code and digits only.
-      Example format for an Indian number: 919876543210
-    */
-    whatsapp: 'REPLACE_WITH_MALIKAMUKKU_WHATSAPP_NUMBER',
+    phone: '94462 49919',
+    whatsapp: '919446249919',
   },
 ];
 
